@@ -1,16 +1,21 @@
+from checkWebsitesStatus import checkWebsitesStatus
 from extractTextFromImage import extractTextFromImage
 from generatePassword import generatePassword
+from rich import print
 
 
 def menu():
-    print("1.Generate password")
-    print("2.Extract text from image")
+    print("[green]1.Generate password")
+    print("[blue]2.Extract text from image")
+    print("[green]3.Check websites status")
 
     choose = input("Choose an option: ")
     if choose == "1":
         generatePassword()
     elif choose == "2":
         extractTextFromImage()
+    elif choose == "3":
+        checkWebsitesStatus()
     else:
         print("Invalid option. Please try again.")
         menu()
