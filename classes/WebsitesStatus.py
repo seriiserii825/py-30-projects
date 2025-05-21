@@ -34,7 +34,9 @@ class WebsitesStatus:
 
     def checkWebsite(self, website: str, user_agent):
         try:
-            code: int = requests.get(website, headers={'User-Agent': user_agent}).status_code
+            code: int = requests.get(website, headers={'User-Agent': user_agent}, timeout=5).status_code
             print(f"Website: {website} - Status code: {code} - Description: {self.getStatusDescription(code)}")
+        except requests.exceptions.Timeout:
+            print(f'Timeout while checking {website}')
         except requests.exceptions.RequestException as e:
             print(f'Error checking {website}: {e}')

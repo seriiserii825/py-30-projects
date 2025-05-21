@@ -3,5 +3,6 @@ from classes.WebsitesStatus import WebsitesStatus
 
 def checkWebsitesStatus():
     wb = WebsitesStatus()
-    websites = wb.getWebsites()
-    print(f"websites: {websites}")
+    websites: list[str] = wb.getWebsites()
+    for website in websites:
+        wb.checkWebsite(website, wb.user_agent)
