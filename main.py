@@ -6,6 +6,7 @@ from generatePassword import generatePassword
 from rich import print
 
 from guessPassword import guessPassword
+from sortFiles import sortFiles
 
 
 def menu():
@@ -15,6 +16,7 @@ def menu():
     print("[blue]4.Check passwords")
     print("[green]5.Guess passwords")
     print("[blue]6.Download Image")
+    print("[green]7.Sort files")
 
     choose = input("Choose an option: ")
     if choose == "1":
@@ -29,6 +31,8 @@ def menu():
         guessPassword()
     elif choose == "6":
         downloadImage()
+    elif choose == "7":
+        sortFiles()
     else:
         print("Invalid option. Please try again.")
         menu()
