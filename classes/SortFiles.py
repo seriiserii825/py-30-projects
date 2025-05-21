@@ -7,6 +7,9 @@ class SortFiles:
         self.current_path = os.getcwd()
         self.folder_path = ""
         self.selected_path = ""
+        self.go_on = input(f"current folder is: '{self.current_path}', do you want to continue, (y/n)? ")
+        if self.go_on != 'y':
+            exit()
 
     def createFolder(self, ext: str):
         """
@@ -30,7 +33,8 @@ class SortFiles:
                 if ext:
                     self.createFolder(ext)
                     target_path = os.path.join(self.folder_path, filename)
-                    shutil.move(file_path, target_path)
+                    # copy file
+                    shutil.copy(file_path, target_path)
 
     def removeEmptyFolders(self):
         """
