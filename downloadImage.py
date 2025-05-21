@@ -1,2 +1,6 @@
+from classes.DownloadImage import DownloadImage
+
+
 def downloadImage():
-    pass
+    download = DownloadImage()
+    download.download()

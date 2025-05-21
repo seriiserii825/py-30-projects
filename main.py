@@ -1,5 +1,6 @@
 from checkPasswords import checkPasswords
 from checkWebsitesStatus import checkWebsitesStatus
+from downloadImage import downloadImage
 from extractTextFromImage import extractTextFromImage
 from generatePassword import generatePassword
 from rich import print
@@ -13,6 +14,7 @@ def menu():
     print("[green]3.Check websites status")
     print("[blue]4.Check passwords")
     print("[green]5.Guess passwords")
+    print("[blue]6.Download Image")
 
     choose = input("Choose an option: ")
     if choose == "1":
@@ -25,6 +27,8 @@ def menu():
         checkPasswords()
     elif choose == "5":
         guessPassword()
+    elif choose == "6":
+        downloadImage()
     else:
         print("Invalid option. Please try again.")
         menu()
